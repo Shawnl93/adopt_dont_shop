@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2022_10_21_210945) do
     t.string "city"
     t.string "state"
     t.integer "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pet_applications", force: :cascade do |t|
