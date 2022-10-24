@@ -24,5 +24,17 @@ RSpec.describe "Makes new applications" do
       expect(page).to have_content("123 the st.")
     end
 
+    it "errors when i dont fill out application" do
+      visit '/applications/new'
+      click_on "Submit"
+      expect(current_path).to eq("/applications/new")
+      expect(page).to have_content("Error: Name can't be blank")
+      expect(page).to have_content("Street can't be blank")
+      expect(page).to have_content("City can't be blank")
+      expect(page).to have_content("State can't be blank")
+      expect(page).to have_content("Zip code can't be blank")
+      expect(page).to have_content("Description can't be blank")
+    end
+
   end
 end

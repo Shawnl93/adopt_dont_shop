@@ -17,7 +17,10 @@ RSpec.describe 'application show page' do
   describe 'application show page' do
     it "Shows the applicant's attributes" do
       expect(page).to have_content(@Shawn.name)
-      expect(page).to have_content(@Shawn.address)
+      expect(page).to have_content(@Shawn.street)
+      expect(page).to have_content(@Shawn.city)
+      expect(page).to have_content(@Shawn.state)
+      expect(page).to have_content(@Shawn.zip_code)
       expect(page).to have_content(@Shawn.description)
       expect(page).to have_content(@Shawn.application_status)
     end
