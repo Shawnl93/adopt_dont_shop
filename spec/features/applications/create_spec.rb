@@ -20,10 +20,9 @@ RSpec.describe "Makes new applications" do
       shawn2 = Application.last.id
       expect(current_path).to eq("/applications/#{shawn2}")
       expect(page).to have_content("In Progress")
+      expect(page).to have_content("Shawn 2.0")
+      expect(page).to have_content("123 the st.")
     end
 
-    it "" do
-
-    end
   end
 end

@@ -9,13 +9,13 @@ class ApplicationsController < ApplicationController
 
   def create
     application = Application.create(app_params)
-    binding.pry
     redirect_to "/applications/#{application.id}"
   end
 
 private
 
   def app_params
-    params.permit(:name, :street, :city, :state, :zip_code, :description)
+    params[:application_status] = "In Progress"
+    params.permit(:name, :street, :city, :state, :zip_code, :description, :application_status)
   end
 end
