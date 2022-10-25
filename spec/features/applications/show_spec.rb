@@ -46,5 +46,6 @@ RSpec.describe 'application show page' do
       expect(page).to_not have_button("Adopt this Pet")
 
     end
+
   end
 end
