@@ -24,10 +24,15 @@ class ApplicationsController < ApplicationController
 
   def update
     application = Application.find(params[:id])
-      params[:commit] == "Submit application"
+    if params[:commit] == "Submit application"
       application[:application_status] = "Pending"
       application[:description] = params[:"Why I am a good owner"]
       application.save
+    else
+      pet = Pet.find(params[:pet])
+      application.pets << pet
+      application.save
+    end
       redirect_to "/applications/#{application.id}"
   end
 

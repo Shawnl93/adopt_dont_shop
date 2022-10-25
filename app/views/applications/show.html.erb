@@ -22,7 +22,7 @@
   <% end %>
 
   <% @pets.each do |pet| %>
-  <%= pet.name %>
+  <p><%= pet.name %> <%= button_to "Adopt this Pet", "/applications/#{@application.id}", method: :patch, params:{pet: pet.id, application: @application.id} %></p>
   <% end %>
 
 <h2> Pets on application </h2>
