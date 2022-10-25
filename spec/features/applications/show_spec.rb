@@ -67,6 +67,13 @@ RSpec.describe 'application show page' do
       expect(page).to have_content(@clawdia.name)
       expect(page).to_not have_button("Adopt this Pet")
     end
+
+    it "can search by partials" do
+      fill_in "Search", with: "Lu"
+      click_on("Search")
+      expect(current_path).to eq("/applications/#{@Shawn.id}")
+      expect(page).to have_content(@lucille.name)
+    end
   end
 
   describe "No pet added to application" do
