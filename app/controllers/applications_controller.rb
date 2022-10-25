@@ -17,6 +17,15 @@ class ApplicationsController < ApplicationController
     end
   end
 
+  def update
+    application = Application.find(params[:id])
+      params[:commit] == "Submit application"
+      application[:application_status] = "Pending"
+      application[:description] = params[:"Why I am a good owner"]
+      application.save
+      redirect_to "/applications/#{application.id}"
+  end
+
 private
 
   def app_params

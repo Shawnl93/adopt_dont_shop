@@ -36,8 +36,7 @@ RSpec.describe 'application show page' do
     end
 
     it "section to submit application" do
-      save_and_open_page
-      fill_in "Why I am a good ownder", with: "Im the best"
+      fill_in "Why I am a good owner", with: "Im the best"
       click_button("Submit application")
       expect(current_path).to eq("/applications/#{@Shawn.id}")
 
