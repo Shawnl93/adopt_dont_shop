@@ -34,5 +34,18 @@ RSpec.describe 'application show page' do
       click_on("Mr. Pirate")
       expect(current_path).to eq("/pets/#{@pirate.id}")
     end
+
+    it "section to submit application" do
+      fill_in "Why I am a good owner", with: "Im the best"
+      click_button("Submit application")
+      expect(current_path).to eq("/applications/#{@Shawn.id}")
+
+      expect(page).to have_content("Pending")
+      expect(page).to have_content(@pirate.name)
+      expect(page).to have_content(@clawdia.name)
+      expect(page).to_not have_button("Adopt this Pet")
+
+    end
+
   end
 end

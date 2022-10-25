@@ -5,6 +5,15 @@
 <p>Description: <%= @application.description %></p>
 <p>Status: <%= @application.application_status%></p>
 
+<% if @application.pets.count >= 1 %>
+<h2> Application </h2>
+  <%= form_with url: "/applications/#{@application.id}", method: :patch, local: true do |f| %>
+    <%= f.label :"Why I am a good owner" %>
+    <%= f.text_field :"Why I am a good owner" %>
+    <%= f.submit "Submit application" %>
+  <% end %>
+<% end %>
+
 <h2> Pets on application </h2>
 <% @application.pets.each do |pet| %>
   <p><%= link_to pet.name, "/pets/#{pet.id}" %> </p>
