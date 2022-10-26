@@ -1,0 +1,5 @@
+<h1> Admin Application </h1>
+<% @application.pets.each do |pet| %>
+  <%= pet.name %>
+  <%= button_to "Approve #{pet.name}", "/admin/apps/#{@application.id}", method: :get %>
+<% end %>
