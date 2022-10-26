@@ -15,7 +15,7 @@ RSpec.describe 'the admin application show' do
       visit "/admin/apps/#{@Shawn.id}"
     end
 
-    it "Buttom to Approve application for specific pet" do
+    xit "Buttom to Approve application for specific pet" do
       expect(page).to have_content("Admin Application")
       click_button("Approve #{@pirate.name}")
       expect(current_path).to eq("/admin/apps/#{@Shawn.id}")

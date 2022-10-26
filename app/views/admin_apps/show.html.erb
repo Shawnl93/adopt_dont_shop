@@ -1,4 +1,5 @@
 <h1> Admin Application </h1>
 <% @application.pets.each do |pet| %>
-  <%= button_to "Approve #{pet.name}", "/admin/apps/#{@application.id}", method: :get, local: true %>
+  <%= pet.name %>
+  <%= button_to "Approve #{pet.name}", "/admin/apps/#{@application.id}", method: :get %>
 <% end %>
