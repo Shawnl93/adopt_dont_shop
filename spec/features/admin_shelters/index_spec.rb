@@ -21,10 +21,9 @@ RSpec.describe 'the admin shelters index' do
       expect(@shelter_3.name).to appear_before(@shelter_1.name)
     end
 
-    xit "Name of every shelter with pending application" do
+    it "Name of every shelter with pending application" do
       expect(page).to have_content("Shelter's with Pending Applications")
-      expect(page).to have_content(@shelter_2)
-      expect(page).to_not have_content(@shelter_1)
+      expect(page).to have_content(@shelter_2.name)
     end
   end
 end
